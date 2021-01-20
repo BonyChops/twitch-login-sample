@@ -17,7 +17,7 @@ Loading...
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
-    const urlParam = location.hash.substring(1);
+    const urlParam = decodeURI(location.hash.substring(1));
     console.log(urlParam);
     const result = urlParam.split("&").map(data => {
         const result = data.split("=");
