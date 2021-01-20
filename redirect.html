@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <title>Redirect</title>
+</head>
+
+<body>
+<pre>
+<code class="message">
+Loading...
+</code>
+</pre>
+
+</body>
+<script>
+    const urlParam = location.hash.substring(1);
+    console.log(urlParam);
+    const result = urlParam.split("&").map(data => {
+        const result = data.split("=");
+        return {
+            title: result[0],
+            value: result[1]
+        }
+    });
+    $('code.message').text(JSON.stringify(result, null, 2));
+
+</script>
+
+</html>
